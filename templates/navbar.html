@@ -1,0 +1,58 @@
+{% load static %}
+
+<div class="top">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col">
+                <p class="social d-flex">
+                    <a href="#"><span class="icon-facebook"></span></a>
+                    <a href="#"><span class="icon-twitter"></span></a>
+                    <a href="#"><span class="icon-google"></span></a>
+                        <a href="#"><span class="icon-pinterest"></span></a>
+                </p>
+            </div>
+            <div class="col d-flex justify-content-end">
+                <p class="num"><span class="icon-phone"></span> + 1700 12345 6789</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">RAINBOW<span> APARTMENT</span></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="{% url 'all-properties' %}" class="nav-link">Property</a></li>
+          <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+
+          {% if not request.user.is_authenticated %}
+          <li class="nav-item cta"><a href="{% url 'login' %}" class="nav-link ml-lg-2"><span class="icon-user"></span> Sign-In</a></li>
+          <li class="nav-item cta cta-colored"><a href="{% url 'signup' %}" class="nav-link"><span class="icon-pencil"></span> Sign-Up</a></li>
+          {% endif %}
+        </ul>
+      </div>
+
+{% if request.user.is_authenticated %}
+
+<div class="dropdown profile-dropdown" style="margin-left: 5px; color: white;">
+<a href="">
+    <img src="media/{{user_image.image}}" alt="This is a profile image" width="50" height="50"
+  class="dropdown-toggle" id="profile-image-dropdown" data-toggle="dropdown" style="border : 4px solid white; border-radius: 40px;"></a>
+<div class="dropdown-menu" aria-labelledby="profile-image-dropdown" style="background-color: rgb(0,0,0); color: white;">
+    <a href="" class="dropdown-item">saved property</a>
+    <a href="" class="dropdown-item">User Dashboard</a>
+    <a href="" class="dropdown-item">Login</a>
+    <a href="" class="dropdown-item">Logout</a>
+</div>
+</div>
+{% endif %}
+    </div>
+  </nav>
+<!-- END nav -->

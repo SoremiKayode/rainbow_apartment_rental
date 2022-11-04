@@ -1,0 +1,477 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block website_details %}
+
+<style>
+.left-bar {
+    background-color: rgb(225,150,43);
+    padding-top: 30px;
+    color: white;
+}
+
+.leftbar-list {
+    list-style-type: none;
+    margin-left: -40px;
+
+}
+
+.leftbar-link {
+padding-left: 20px;
+padding-top: 5px;
+}
+
+.leftbar-link a {
+    color: white;
+    text-decoration: none;
+    text-emphasis-color: white;
+}
+
+.leftbar-link:hover{
+    background-color: blueviolet;
+    cursor: pointer;
+}
+
+table {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.2);
+    width: 100%;
+
+}
+
+.middle-column {
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+th td {
+    white-space: nowrap;
+    text-align: left;
+    padding: 8px;
+
+}
+
+tr {
+    white-space: nowrap;
+
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.right-column {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.2);
+
+}
+
+thead {
+    background-color: rgb(225,150,43);
+    color: white;
+
+}
+
+#submit_button:hover {
+    background-color: rgb(172, 137, 255);
+}
+
+.form-row {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.2);
+    background-color: rgb(225,150,43);
+}
+
+.site-update{
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.2);
+    margin-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(225,150,43);
+    color: rgb(255, 255, 255);
+
+}
+
+.update-title {
+    color: white;
+    font-weight: bold;
+}
+
+.input-after-click {
+background-color: rgb(225,150,43);
+color: white;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.middle-row-item {
+padding: 10px 20px 40px 20px;
+margin-bottom: 40px;
+}
+</style>
+<section>
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- --------------------- leftbar of container ----------------- -->
+        <div class="col-lg-2 left-bar">
+            <div style="text-align: center; color:white;"><h5 style="color: white;"> <i class="fa fa-th"></i> Dashboard</h5></div>
+            <ul class="leftbar-list">
+                <li class="leftbar-link">user table</li>
+                <li class="leftbar-link">properties table</li>
+                <li class="leftbar-link">transaction table</li>
+                <li class="leftbar-link">add properties</li>
+                <li class="leftbar-link">add admin</li>
+            </ul>
+        </div>
+
+
+<!-- --------------------- center of container ------------------------ -->
+        <div class="col-lg-8 middle-column">
+        <div class="row middle-row-item show">
+            <!-- --------------------------- user table ------------------------ -->
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <th>user id</th>
+                        <th>first name</th>
+                        <th>second name</th>
+                        <th>user name</th>
+                        <th>last login</th>
+                        <th>email</th>
+                        <th>phone number</th>
+                        <th>city</th>
+                        <th>street address</th>
+                        <th>register date</th>
+                        <th>user image</th>
+                        <th>update user profile</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                      
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+        <div class="row middle-row-item hide">
+            <!-- --------------------------- Properties table ------------------------ -->
+            <table class="table">
+                col
+                <thead>
+                    <tr>
+                        <th>user id</th>
+                        <th>first name</th>
+                        <th>second name</th>
+                        <th>user name</th>
+                        <th>last login</th>
+                        <th>email</th>
+                        <th>phone number</th>
+                        <th>city</th>
+                        <th>street address</th>
+                        <th>register date</th>
+                        <th>user image</th>
+                        <th>update user profile</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                      
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="row middle-row-item hide">
+            <!-- --------------------------- transaction table ------------------------ -->
+            <table class="table">
+                col
+                <thead>
+                    <tr>
+                        <th>user id</th>
+                        <th>first name</th>
+                        <th>second name</th>
+                        <th>user name</th>
+                        <th>last login</th>
+                        <th>email</th>
+                        <th>phone number</th>
+                        <th>city</th>
+                        <th>street address</th>
+                        <th>register date</th>
+                        <th>user image</th>
+                        <th>update user profile</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                        <td>Soremi Kayode</td>
+                      
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="row form-row middle-row-item hide">
+            <div class="container">
+
+                <h4 style="text-align: center;">Properties Form</h4>
+                <form>
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <!-- <input type="text" class="form-control" name="inputName" id="inputName" placeholder="">
+                             -->
+                             {{form.property_title}}
+                        <div id="property-title-error" style="color:black"></div>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- <input type="text" class="form-control" name="inputName" id="inputName" placeholder=""> -->
+                            {{form.property_description}}
+                            
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <!-- <input type="text" class="form-control" name="inputName" id="inputName" placeholder=""> -->
+                            {{form.price}}
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- <input type="text" class="form-control" name="inputName" id="inputName" placeholder=""> -->
+                            {{form.no_of_rooms}}
+                            
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            
+                        <!-- <input type="text" class="form-control" name="inputName" id="inputName" placeholder=""> -->
+                        {{form.furniture_type}}
+                            
+                    </div>
+                        <div class="col-sm-6">
+                            <!-- <input type="text" class="form-control" name="inputName" id="inputName" placeholder=""> -->
+                            
+                            {{form.number_of_resident}}
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            
+                        <!-- <input type="text" class="form-control" name="inputName" id="inputName" placeholder=""> -->
+                        {{form.kitchen_and_other_appliance}}
+                            
+                    </div>
+                        <div class="col-sm-6">
+                            <!-- <input type="text" class="form-control" name="inputName" id="inputName" placeholder=""> -->
+                            {{form.has_master_bedroom}}
+                        
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            
+                        <!-- <input type="text" class="form-control" name="inputName" id="inputName" placeholder=""> -->
+                        {{form.dinning_seat}}
+                    </div>
+                        <div class="col-sm-6">
+                            <!-- <input type="text" class="form-control" name="inputName" id="inputName" placeholder=""> -->
+                            {{form.no_of_car_in_parking}}
+                        
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            
+                        <!-- <input type="text" class="form-control" name="inputName" id="inputName" placeholder=""> -->
+                        {{form.no_of_guest_toilet}}
+                            
+                    </div>
+                        <div class="col-sm-6">
+                            <!-- <input type="text" class="form-control" name="inputName" id="inputName" placeholder=""> -->
+                            {{form.image}}
+                        
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <input type="submit" id="submit_button" class="btn " style="background-color: black; width: 100%; height: auto; font-size: 18px; color: white;">
+                            
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+
+
+<!-- ------------------------------- right side of conteiner --------------------------- -->
+        <div class="col-lg-2 right-column">
+          <div class="site-update">
+            <span class="udate-text">number of user</span>
+            <h4 class="update-title">400</h4>
+          </div>
+          <div class="site-update">
+            <span class="udate-text">number of user</span>
+            <h4 class="update-title">400</h4>
+          </div>
+          <div class="site-update">
+            <span class="udate-text">number of user</span>
+            <h4 class="update-title">400</h4>
+          </div>
+          <div class="site-update">
+            <span class="udate-text">number of user</span>
+            <h4 class="update-title">400</h4>
+          </div>
+          <div class="site-update">
+            <span class="udate-text">number of user</span>
+            <h4 class="update-title">400</h4>
+          </div>
+        </div>
+            
+
+    </div>
+</div>
+</section>
+
+<script>
+var all_input = document.querySelectorAll("input");
+var property_title = document.getElementById("property_title");
+var property_title_error = document.getElementById("property-title-error");
+var middle_row_item = document.getElementsByClassName("middle-row-item");
+var left_bar_link = document.getElementsByClassName("leftbar-link");
+var link = document.getElementsByClassName("link");
+
+    
+function get_clicked_link(){
+for(a = 0; a < left_bar_link.length; a++){
+left_bar_link[a].addEventListener("click", function () {
+        var y = this.innerText;
+
+    switch(y){
+    case "user table" :
+        middle_row_item[0].classList.remove("hide");
+        middle_row_item[0].classList.add("show");
+        middle_row_item[1].classList.add("hide");
+        middle_row_item[1].classList.remove("show");
+        middle_row_item[2].classList.add("hide");
+        middle_row_item[2].classList.remove("show");
+        middle_row_item[3].classList.add("hide");
+        middle_row_item[3].classList.remove("show");
+    break;
+
+    case "properties table" : 
+    middle_row_item[1].classList.remove("hide");
+        middle_row_item[1].classList.add("show");
+        middle_row_item[0].classList.add("hide");
+        middle_row_item[0].classList.remove("show");
+        middle_row_item[2].classList.add("hide");
+        middle_row_item[2].classList.remove("show");
+        middle_row_item[3].classList.add("hide");
+        middle_row_item[3].classList.remove("show");
+    break;
+
+    case "transaction table" : 
+    middle_row_item[2].classList.remove("hide");
+        middle_row_item[2].classList.add("show");
+        middle_row_item[1].classList.add("hide");
+        middle_row_item[1].classList.remove("show");
+        middle_row_item[0].classList.add("hide");
+        middle_row_item[0].classList.remove("show");
+        middle_row_item[3].classList.add("hide");
+        middle_row_item[3].classList.remove("show");
+    break;
+
+    case "add properties" : 
+    middle_row_item[3].classList.remove("hide");
+        middle_row_item[3].classList.add("show");
+        middle_row_item[1].classList.add("hide");
+        middle_row_item[1].classList.remove("show");
+        middle_row_item[0].classList.add("hide");
+        middle_row_item[0].classList.remove("show");
+        middle_row_item[2].classList.add("hide");
+        middle_row_item[2].classList.remove("show");
+    break;
+}
+    })
+}
+}
+
+get_clicked_link()
+
+// ================ changing input background color on inputing the right data =======
+for (x = 0; x < all_input.length; x++) {
+  all_input[x].addEventListener("change", function () {
+    if (this.value.length > 0) {
+    this.style.backgroundColor = "black";
+    }
+  });
+}
+
+// ================ input validation  =======================
+property_title.addEventListener("change", function () {
+
+    if(this.value.length > 250){
+        property_title_error.innerHTML = "<span>length of text must  not exceed 250 words</span>";
+    }
+
+});
+</script>
+
+
+
+
+{% endblock %}

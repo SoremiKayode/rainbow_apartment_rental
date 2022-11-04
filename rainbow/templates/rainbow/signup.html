@@ -1,0 +1,258 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block website_details %}
+
+<section style="background-color: rgb(225,150,43); border-top: 3px solid white; border-bottom: 3px solid white;">
+<br>
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-md-8 offset-lg-2 offset-md-2 form-column">
+      
+<div style="text-align: center; color: #fff; margin-bottom: 30px; font-size: 30px;">
+<b>Sign Up</b>
+</div>
+
+<div id="display"></div>
+<form method="post" action="" class="login-logout-form" enctype="multipart/form-data">
+    {% csrf_token %}
+
+<!-- ================== First Name : -->
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text fa fa-user prepend-icon"></span>
+</div>
+<!-- <input type="text" class="form-control" name="first_name" placeholder="enter first name" id="first_name" required> -->
+{{signupform.first_name}}
+</div>
+<div id="first_name_error">{{signupform.first_name.errors}}</div>
+
+<!-- ================== Second Name : -->
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text fa fa-user-plus prepend-icon"></span>
+</div>
+<!-- <input type="text" class="form-control" name="second_name" placeholder="enter second name" id="second_name" required> -->
+{{signupform.second_name}}
+</div>
+<div id="second_name_error">{{signupform.second_name.errors}}</div>
+
+<!-- =================== Email -->
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text fa fa-envelope prepend-icon"></span>
+</div>
+<!-- <input type="email" class="form-control" name="signupemail" placeholder="enter email" autocomplete="email" id="signupemail" required> -->
+{{signupform.signupemail}}
+</div>
+<div id="signupmail_error">{{signupform.signupemail.errors}}</div>
+
+
+ <!-- ================== Address : -->
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+  <span class="input-group-text fa fa-address-book prepend-icon"></span>
+  </div>
+  <!-- <input type="text" class="form-control" name="address" placeholder="enter accurate address" id="address"  required> -->
+{{signupform.street_address}}
+</div>
+<div id="street_address_error">{{signupform.street_address.errors}}</div>
+
+<!-- =========  City ==================== -->
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+  <span class="input-group-text fa fa-address-book prepend-icon"></span>
+  </div>
+{{signupform.city}}
+</div>
+<div id="city_error">{{signupform.city.errors}}</div>
+
+<!-- ==================== Phone Number  -->
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text fa fa-phone prepend-icon"></span>
+</div>
+<!-- <input type="number" class="form-control" name="phonenumber" placeholder="enter phonenumber" id="phonenumber" required> -->
+{{signupform.phone_number}}
+</div>
+<div id="phone_number_error">{{signupform.phone_number.errors}}</div>
+
+
+
+
+<!-- ================== Zip Code : -->
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text fa fa-code prepend-icon"></span>
+</div>
+<!-- <input type="text" class="form-control" name="zip_code" placeholder="enter zip code" id="zip_code" required> -->
+{{signupform.zip_code}}
+</div>
+<div id="zip_code_error">{{signupform.zip_code.errors}}</div>
+
+
+<!-- ======================= Password One -->
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text fa fa-lock prepend-icon"></span>
+</div>
+<!-- <input type="password" class="form-control" name="signuppassword" placeholder="enter password" autocomplete="new-password" id="signuppassword" required> -->
+{{signupform.password}}
+</div>
+<div id="password_error">{{signupform.password.errors}}</div>
+
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text fa fa-camera prepend-icon"></span>
+</div>
+<!-- <input type="password" class="form-control" name="signuppassword" placeholder="enter password" autocomplete="new-password" id="signuppassword" required> -->
+{{signupform.image}}
+<span id="image_container"></span>
+</div>
+<div id="image_error"></div>
+
+<!-- ======================== Password confirmation  -->
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+  <span class="input-group-text fa fa-lock prepend-icon"></span>
+</div>
+<input type="password" class="form-control" name="confirm-password" placeholder="confirm password" autocomplete="new-password" id="confirm-password" required>
+</div>
+<div id="confirm_password_error"></div>
+
+
+{% if messages %}
+<div class="" style="color: white;">
+{% for message in messages %}
+<li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+{% endfor %}
+</div>
+{% endif %}
+    
+<input type="submit" class="form-control btn btn-primary" id="signup_button"><br><br>
+<div style="text-align: center;">
+<a href="" class="text-align-center" style="color: white; text-decoration: none;">Login</a> <br><br>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<script>
+// =========== all span for displaying error ====================
+var first_name_error = document.getElementById("first_name_error");
+var second_name_error = document.getElementById("second_name_error");
+var signupmail_error = document.getElementById("signupmail_error");
+var street_address_error = document.getElementById("street_address_error");
+var city_error = document.getElementById("city_error");
+var phone_number_error = document.getElementById("phone_number_error");
+var zip_code_error = document.getElementById("zip_code_error");
+var password_error = document.getElementById("password_error");
+var image_error = document.getElementById("image_error");
+var confirm_password_error = document.getElementById("confirm_password_error");
+
+
+// ======================= all form input ==================
+var first_name = document.getElementById("first_name");
+var second_name = document.getElementById("second_name");
+var signupemail = document.getElementById("signupemail");
+var street_address = document.getElementById("address");
+var city = document.getElementById("city");
+var phonenumber = document.getElementById("phonenumber");
+var zip_code = document.getElementById("zip_code");
+var signuppassword = document.getElementById("signuppassword");
+var image = document.getElementById("image");
+var confirm_password = document.getElementById("confirm-password");
+var signup_button = document.getElementById("signup_button");
+
+// ----- regular expresion sanitizing input to check if there is meta characters and numbers in it ---------
+function check_text(key){
+const find_html = key.value.match(/(\W|\d|_)/g);
+
+if(find_html){
+  return `these ${find_html} character are not supported`;
+}
+else {
+  return true;
+}
+}
+
+// ----------- checking for valid email addresses -----------
+function checking_email(key){
+  const find_mail_pattern = key.value.match(/(@|.com)/g);
+
+  if(!find_mail_pattern){
+    return "this is not a valid email";
+  }
+
+  else {
+    return true;
+  }
+}
+
+// ---------- checking passsword --------------
+function sanitize_password(key){
+const find_special_char = key.value.match(/(_|@|#)/g);
+const find_word_char = key.value.match(/[\w]/g);
+const find_digit_char = key.value.match(/[\d]/g);
+
+if(!find_digit_char && !find_word_char && !find_digit_char){
+  return "passsword must contain number, letters and either of @, _ or # eg. frankgothic@1887 ";
+}
+else {
+  return true;
+}
+}
+
+
+// --------------- comparing both password ----------------
+function compare_both_password(key1, key2){
+if(key1.value == key2.value){
+  return true;
+}
+else {
+  return "password does not match";
+}
+}
+
+
+
+
+signupemail.addEventListener("change", function(){
+  alert(checking_email(signupemail));
+});
+
+first_name.addEventListener("change", function(){
+  if(check_text(first_name) != true){
+    first_name_error.innerHTML = `<span style="color:white;">${check_text(first_name)}</span>`;
+  }
+
+});
+
+second_name.addEventListener("change", function(){
+  if(check_text(second_name) != true){
+    second_name_error.innerHTML = `<span style="color:white;">${check_text(second_name)}</span>`;
+  }
+
+});
+
+signuppassword.addEventListener("change", function(){
+  if(sanitize_password(signuppassword) != true){
+    password_error.innerHTML = `<span style="color:white;">${sanitize_password(signuppassword)}</span>`;
+  }
+  alert(sanitize_password(signuppassword));
+});
+
+confirm_password.addEventListener("change", function(){
+  if(compare_both_password(confirm_password, signuppassword) != true){
+    confirm_password_error.innerHTML = `<span style="color:white;">${compare_both_password(signuppassword, confirm_password)}</span>`;
+  }
+});
+
+
+signup_button.addEventListener("click", function(event){
+event.preventDefault();
+alert("Hello world")
+});
+
+</script>
+{% endblock %}

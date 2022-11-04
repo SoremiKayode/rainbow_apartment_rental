@@ -1,0 +1,60 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block website_details %}
+
+<section style="background-color: rgb(225,150,43); border-top: 3px solid white; border-bottom: 3px solid white;">
+<br> <br>
+<div class="container">
+<div class="row">
+<div class="col-lg-8 col-md-8 offset-lg-2 offset-md-2 form-column">
+      
+<div style="text-align: center; color: #fff; margin-bottom: 30px; font-size: 30px;">
+<b>Log In</b>
+</div>
+
+<div id="display">
+<form method="post" action="" class="login-logout-form">
+    {% csrf_token %}
+
+<!-- =================== Email -->
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text fa fa-envelope prepend-icon"></span>
+</div>
+<!-- <input type="email" class="form-control" name="signupemail" placeholder="enter email" autocomplete="email" id="signupemail" required> -->
+{{log_form.email}}
+ </div>
+
+<!-- ======================= Password One -->
+<div class="input-group mb-3">
+<div class="input-group-prepend">
+<span class="input-group-text fa fa-lock prepend-icon"></span>
+</div>
+<!-- <input type="password" class="form-control" name="signuppassword" placeholder="enter password" autocomplete="new-password" id="signuppassword" required> -->
+{{log_form.password}}
+
+</div>
+
+{% if messages %}
+<div class="" style="color: white;">
+{% for message in messages %}
+<li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+{% endfor %}
+</div>
+{% endif %}
+
+<input type="submit" class="form-control btn btn-primary" id="signup"><br><br>
+<div style="text-align: center;">
+<a href="{% url 'signup' %}" class="text-align-center" style="color: white; text-decoration: none;">Sign Up</a> <br><br>
+</div>
+</form>
+</div>
+    
+</div>
+</div>
+</div>
+
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,1 @@
+/images/* \n *.env \n *.settings 
